@@ -1,4 +1,7 @@
 class cassandra(
+
+  cluster_name => 'YourCassandraCluster',
+  seeds        => [ 'clone2' ],
     $package_name               = $cassandra::params::package_name,
     $version                    = $cassandra::params::version,
     $service_name               = $cassandra::params::service_name,
@@ -181,7 +184,3 @@ class cassandra(
     Anchor['cassandra::begin'] -> Class['cassandra::install'] -> Class['cassandra::config'] ~> Class['cassandra::service'] -> Anchor['cassandra::end']
 }
 
-class { 'cassandra':
-  cluster_name => 'YourCassandraCluster',
-  seeds        => [ 'clone2' ],
-}
