@@ -1,7 +1,5 @@
 class cassandra(
 
-  cluster_name => 'YourCassandraCluster',
-  seeds        => [ 'clone2' ],
     $package_name               = $cassandra::params::package_name,
     $version                    = $cassandra::params::version,
     $service_name               = $cassandra::params::service_name,
