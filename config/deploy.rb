@@ -17,7 +17,7 @@ task :display_uptime, :roles => :puppetmaster do
 	run "uptime"
 end
 
-task :push, :roles => :pupetmaster do
+task :push, :roles => :puppetmaster do
 	run "rm -rf /etc/pupet/manifests;rm -rf /etc/puppet/modules;mkdir /etc/puppet/manifests;mkdir /etc/puppet/modules;cp -R /usr/mypuppet/current/manifests/* /etc/puppet/manifests/;cp -R /usr/mypuppet/current/modules/* /etc/puppet/modules/"
 end
 
