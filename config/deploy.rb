@@ -1,9 +1,22 @@
+ssh_options[:forward_agent] = true
+default_run_options[:pty] = true
 set :application, "newapp"
 set :scm, :git
 set :repository,  "git@github.com:supertesting/newapp.git"
 set :user, "ubuntu"
-set :stages, ["staging","production"]
-set :default_stage, "staging"
+set :scm_passphrase, "lolpasswd1"
+set :branch, "master"
+
+set :use_sudo, false
+
+role :puppetmaster, "puppet"
+
+set :deploy_to, "/usr/mypuppet"
+
+task :display_uptime, :roles => :puppetmaster do
+	run "uptime"
+end
+
 
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
