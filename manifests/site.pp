@@ -2,12 +2,11 @@ node default {
     include hosts
 }
 
-
 node "clone3.mydomain.org"
 {
-	include cassandra
+	include apt
 	class { 'cassandra':
   		cluster_name => 'YourCassandraCluster',
-  		seeds        => [ 'clone2' ],
+  		seeds        => [ 'clone2','puppet', ],
 	}
 }
