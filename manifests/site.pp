@@ -3,7 +3,7 @@ node default {
 }
 
 
-node clone3.mydomain.org
+node "clone3.mydomain.org"
 {
 	include cassandra
 }
