@@ -18,7 +18,7 @@ task :display_uptime, :roles => :puppetmaster do
 end
 
 task :push, :roles => :puppetmaster do
-	run "rm -rf /etc/pupet/manifests;rm -rf /etc/puppet/modules;mkdir /etc/puppet/manifests;mkdir /etc/puppet/modules;cp -R /usr/mypuppet/current/manifests/* /etc/puppet/manifests/;cp -R /usr/mypuppet/current/modules/* /etc/puppet/modules/"
+	run "rm -rf /etc/puppet/manifests;rm -rf /etc/puppet/modules;mkdir /etc/puppet/manifests;mkdir /etc/puppet/modules;cp -R /usr/mypuppet/current/manifests/* /etc/puppet/manifests/;cp -R /usr/mypuppet/current/modules/* /etc/puppet/modules/"
 end
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
